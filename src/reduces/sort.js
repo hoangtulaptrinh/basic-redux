@@ -1,6 +1,6 @@
 var initialState = {
       by : 'ahihi',
-      value : 1
+      value : 99
   }
   
   var myReducer = (state = initialState, action) => {
