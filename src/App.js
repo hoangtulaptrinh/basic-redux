@@ -5,7 +5,7 @@ import './App.css';
 //connec react-redux
 import { connect } from 'react-redux';
 import Tokuda from './components/Test'
-
+import Yui_Hatano from './components/TestSwitchCase'
 // const store = createStore(MyReducer);
 // console.log(store.getState())
 // //thực hiện công việc thay đổi status
@@ -25,9 +25,10 @@ class App extends Component{
     }
     render(){
       return<div className ='App'>
-      <button onClick = { this.onClick }>Chạm Vào Em Đi</button>
+      <button onClick = { this.onClick }>Button1</button>
       <h1>{this.props.ahihi}</h1>
-      <Tokuda>Chạm Vào Ông Nè</Tokuda>
+      <Tokuda />
+      <Yui_Hatano />
       </div>
   }
 }

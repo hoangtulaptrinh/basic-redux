@@ -8,17 +8,17 @@ class Tokuda extends Component{
         this.onClick1 = this.onClick1.bind(this);
         this.onClick2 = this.onClick2.bind(this);
       }
-onClick1(){
-    this.props.nhapchuot()
+onClick1(e){
+    this.props.nhapchuot(Number(e.target.value))
 }
 onClick2(){
     this.props.aaaaaa()
 }
     render(){
         return<div>
-        <button onClick = { this.onClick1 }>{this.props.children}</button>
+        <button onClick = { this.onClick1 } value = {100} id='btn1'>Button2</button>
         <h1>{this.props.hienthi}</h1>
-        <button onClick = { this.onClick2 }>ahihi</button>
+        <button onClick = { this.onClick2 }>Button3</button>
         <h1>{this.props.display.value}</h1>
         </div>
     }
@@ -33,9 +33,8 @@ const mapStatetoProps = (state) => {
   }
   //chuyển hàm dispatch action thành props có tên là nhapchuot
   const mapDispatchToProps = (dispatch,props) => {
-       var  hienthi  = this.props.hienthi
     return {
-      nhapchuot : () =>  dispatch(actions.Test({giatri : hienthi})) ,
+      nhapchuot : (value) =>  dispatch(actions.Test({giatri : value})) ,
       aaaaaa: () => dispatch(actions.sort({by:'name',value:-1}))
     }
   }
